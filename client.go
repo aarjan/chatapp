@@ -12,10 +12,10 @@ type client struct {
 	socket *websocket.Conn
 
 	// send is a channel on which messages are sent
-	send   chan []byte
+	send chan []byte
 
 	// room is the room in which the client is chatting
-	room   *room
+	room *room
 }
 
 func (c *client) read() {

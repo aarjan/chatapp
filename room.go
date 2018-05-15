@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -41,6 +42,7 @@ func (r *room) run() {
 		select {
 		// add client
 		case client := <-r.join:
+			fmt.Println("new client joined!")
 			r.clients[client] = true
 
 		// remove client
